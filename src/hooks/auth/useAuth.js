@@ -32,10 +32,11 @@ export const useAuth = () => {
         }));
 
         // Si el usuario es encontrado, navegar a la ruta /welcome
-        navigate('/welcome');
+        navigate('/products');
 
     }
 
+    // Función para manejar el logout
     const handlerLogout = () => {
         // Despachar la acción onLogout al store
         dispatch(onLogout());
