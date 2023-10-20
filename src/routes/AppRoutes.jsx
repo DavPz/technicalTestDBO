@@ -6,11 +6,13 @@ import { CartPage } from "../pages/CartPage"
 export const AppRoutes = () => {
     return (
         <>
-            <NavBar />
-            <Routes>
-                <Route path="/products" element={<ProductsPage />} />
-                <Route path="/cart" element={<CartPage />} />
-            </Routes>
+            <div className="container bg-gray-950 w-full max-w-none bg-blue-200 h-[100%] max-h-none smd:h-[100vh]">
+                <NavBar />
+                <Routes>
+                    <Route path="/products" element={<ProductsPage />} />
+                    <Route path="/cart" element={<CartPage />} />
+                </Routes>
+            </div>
         </>
     )
 }

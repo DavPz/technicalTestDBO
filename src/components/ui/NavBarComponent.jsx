@@ -4,6 +4,7 @@ import {
     Typography
 } from "@material-tailwind/react";
 import { useAuth } from "../../hooks/auth/useAuth";
+import { NavLink } from "react-router-dom";
 
 export const NavBar = () => {
 
@@ -26,8 +27,32 @@ export const NavBar = () => {
                 >
                     {login.user?.name || "Bienvenido"}
                 </Typography>
+
                 <div className="ml-auto flex gap-1 md:mr-4">
+
+                    <NavLink to={"/products"} className="text-white">
+                        <Button
+                            fullWidth
+                            variant="text"
+                            size="sm"
+                            color="white"
+                            className="">
+                            <span>Productos</span>
+                        </Button>
+                    </NavLink>
+                    <NavLink to={"/cart"} className="text-white">
+                        <Button
+                            fullWidth
+                            variant="text"
+                            size="sm"
+                            color="white"
+                            className="">
+                            <span>Carrito de Compras</span>
+                        </Button>
+                    </NavLink>
+
                     <div className="flex items-center gap-x-1">
+
                         <Button
                             onClick={handlerLogout}
                             fullWidth
