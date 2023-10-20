@@ -8,3 +8,15 @@ export const getProducts = () => {
     return products;
 
 }
+
+export const getTotalCost = (cart) => {
+    return cart.reduce(
+        (accumulator, item) => accumulator + item.product.cost * item.quantity
+        , 0);
+}
+
+export const getTotalItems = (cart) => {
+    return cart.reduce(
+        (accumulator, item) => accumulator + item.quantity
+        , 0);
+}
