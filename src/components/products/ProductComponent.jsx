@@ -7,12 +7,12 @@ import {
     Button,
   } from "@material-tailwind/react";
    
-  export const ProductComponent = () => {
+  export const ProductComponent = ({product, imgUrl}) => {
     return (
       <Card variant="gradient">
         <CardHeader shadow={false} floated={false} className="h-96">
           <img
-            src="https://picsum.photos/300"
+            src={imgUrl}
             alt="card-image"
             className="h-full w-full object-cover"
           />
@@ -20,10 +20,10 @@ import {
         <CardBody>
           <div className="mb-2 flex items-center justify-between">
             <Typography color="blue-gray" className="font-medium">
-              Apple AirPods
+              {product?.name}
             </Typography>
             <Typography color="blue-gray" className="font-medium">
-              $95.00
+              ${product?.cost}
             </Typography>
           </div>
           <Typography
@@ -31,8 +31,7 @@ import {
             color="gray"
             className="font-normal opacity-75"
           >
-            With plenty of talk and listen time, voice-activated Siri access, and
-            an available wireless charging case.
+            {product?.description}
           </Typography>
         </CardBody>
         <CardFooter className="pt-0">

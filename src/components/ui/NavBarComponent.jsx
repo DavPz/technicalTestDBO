@@ -9,9 +9,7 @@ import { NavLink } from "react-router-dom";
 export const NavBar = () => {
 
     const { login, handlerLogout } = useAuth();
-
-    console.log(login);
-
+    
     return (
         <Navbar
             variant="gradient"
