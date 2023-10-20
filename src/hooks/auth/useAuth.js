@@ -3,12 +3,14 @@ import { loginUser } from "../../services/authService";
 import { useDispatch, useSelector } from "react-redux";
 import { onLogin, onLogout } from "../../store/slices/auth/authSlice";
 import { Navigate, useNavigate } from "react-router-dom";
+import { useCart } from "../cart/useCart";
 
 export const useAuth = () => {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const {user, isAuth} =useSelector(state => state.auth);
+    const {handlerClearCart} = useCart();
 
     // Función para manejar el login
     const handlerLogin = ({email, password}) => {
@@ -40,6 +42,8 @@ export const useAuth = () => {
     const handlerLogout = () => {
         // Despachar la acción onLogout al store
         dispatch(onLogout());
+
+        handlerClearCart();
 
         // Remover el usuario del sessionStorage
         sessionStorage.removeItem('login');

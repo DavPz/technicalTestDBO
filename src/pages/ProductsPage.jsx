@@ -11,8 +11,8 @@ export const ProductsPage = () => {
         productsList();
     }, [])
 
-    useEffect(() => {
-        handlerSetTotalItems(cart);
+    useEffect(() => {        
+        handlerSetTotalItems(cart);        
     }, [cart])
 
     return (
