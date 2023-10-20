@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
 import { loginUser } from "../../services/authService";
 import { useDispatch, useSelector } from "react-redux";
-import { onLogin } from "../../store/slices/auth/authSlice";
+import { onLogin, onLogout } from "../../store/slices/auth/authSlice";
 import { Navigate, useNavigate } from "react-router-dom";
 
 export const useAuth = () => {
@@ -23,7 +23,7 @@ export const useAuth = () => {
         }
 
         // Si el usuario es encontrado, despachar la acción onLogin con el usuario encontrado al store
-        dispatch(onLogin(user));
+        dispatch(onLogin({user}));
 
         // Si el usuario es encontrado, guardar el usuario en el sessionStorage y el estado de autenticación
         sessionStorage.setItem('login', JSON.stringify({
@@ -36,11 +36,24 @@ export const useAuth = () => {
 
     }
 
+    const handlerLogout = () => {
+        // Despachar la acción onLogout al store
+        dispatch(onLogout());
+
+        // Remover el usuario del sessionStorage
+        sessionStorage.removeItem('login');
+        sessionStorage.clear();
+
+        // Navegar a la ruta /login
+        navigate('/login');
+    }
+
     return {
         login: {
             user,
             isAuth,
         },
-        handlerLogin
+        handlerLogin,
+        handlerLogout,
     };
 }

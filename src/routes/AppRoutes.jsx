@@ -1,6 +1,10 @@
+import { NavBar } from "../components/ui/NavBarComponent"
 
 export const AppRoutes = () => {
-  return (
-    <div>AppRoutes</div>
-  )
+    return (
+        <>
+            <NavBar />
+            <div>AppRoutes</div>
+        </>
+    )
 }
