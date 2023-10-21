@@ -6,7 +6,7 @@ import { LoginFormComponent } from "./LoginFormComponent";
 
 export const LoginComponent = () => {
   return (
-    <Card color="transparent" shadow={false} className="w-[60%] text-justify sm:w-full  mx-auto items-center">
+    <Card color="" shadow={false} className=" text-justify w-full  mx-auto items-center p-5">
       <Typography variant="h4" color="blue-gray" className=" text-center w-4/5">
         Login
       </Typography>

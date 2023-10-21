@@ -32,7 +32,7 @@ export const CartFooterComponent = ({ totalCost }) => {
                     >
                         <XMarkIcon className="w-5 h-5 float-left" />
                         <Typography variant="small" color="white" className="float-left">
-                            Eliminar Carrito
+                            Eliminar Todo
                         </Typography>
                     </Button>
 

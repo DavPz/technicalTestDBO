@@ -14,7 +14,7 @@ export const CartPage = () => {
         :
         <>
           <Typography variant="h2" color="white" className="w-[50%] m-auto mt-6 bg-blue-gray-500 text-center rounded-lg">
-            Carro de Compras
+            Carrito de Compras
           </Typography>
           <CartViewComponent />
         </>

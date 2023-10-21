@@ -1,4 +1,4 @@
-import { productsJson } from "../util/productsJson";
+import { productsJson } from "../data/productsJson";
 
 export const getProducts = () => {
 

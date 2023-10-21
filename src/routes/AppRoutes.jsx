@@ -7,7 +7,7 @@ export const AppRoutes = () => {
     return (
         <>
             <div className="container bg-gray-950 w-full max-w-none bg-blue-200 h-[100%] max-h-none overflow-auto">
-                <div className="h-[100%] smd:h-screen ">
+                <div className="h-screen ">
                     <NavBar />
                     <Routes>
                         <Route path="/products" element={<ProductsPage />} />

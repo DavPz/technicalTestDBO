@@ -1,4 +1,4 @@
-import { usersJson } from '../util/usersJson';
+import { usersJson } from '../data/usersJson';
 
 export const loginUser = (email, password) => {
     

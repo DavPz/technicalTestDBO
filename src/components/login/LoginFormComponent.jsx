@@ -73,8 +73,11 @@ export const LoginFormComponent = () => {
                         }}
                     />
                 </div>
-                <Button className="mt-6" fullWidth
+                <Button 
+                className="mt-6" 
+                fullWidth
                     type="submit"
+                    color="blue"
                 >
                     Ingresar
                 </Button>
