@@ -19,8 +19,8 @@ export const PublicRoutes = () => {
                             <Route path="/*" element={<AppRoutes />} />
                         )
                         : <>
-                            <Route path="/login" element={<LogingPage />} />
-                            <Route path="/*" element={<Navigate to={"/login"} />} />
+                            <Route path="/" element={<LogingPage />} />
+                            <Route path="/*" element={<Navigate to={"/"} />} />
                         </>
                 }
 

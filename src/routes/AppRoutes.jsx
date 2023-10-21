@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom"
+import { Navigate, Route, Routes } from "react-router-dom"
 import { NavBar } from "../components/ui/NavBarComponent"
 import { ProductsPage } from "../pages/ProductsPage"
 import { CartPage } from "../pages/CartPage"
@@ -12,6 +12,7 @@ export const AppRoutes = () => {
                     <Routes>
                         <Route path="/products" element={<ProductsPage />} />
                         <Route path="/cart" element={<CartPage />} />
+                        <Route path="/*" element={<Navigate to={"/products"} />} />
                     </Routes>
                 </div>
             </div>
