@@ -18,14 +18,23 @@ export const cartSlice = createSlice({
     reducers: {
 
         //funcion para agregar un producto al carrito si no existe, o sumarle la cantidad si ya existe
-        addToCart: (state, action) => {            
+        addToCart: (state, action) => {
             const product = action.payload.product;
             const quantity = action.payload.quantity;
             const productInCart = state.cart.find((item) => item.product.id === product.id);
             if (productInCart) {
-                productInCart.quantity += quantity;
+                state.cart = state.cart.map((item) => {
+                    if (item.product.id === product.id) {
+                        return { ...item, quantity: item.quantity + quantity };
+                    }
+                    return item;
+                }
+                );
             } else {
-                state.cart.push({ product, quantity });
+                state.cart = [
+                    ...state.cart,
+                    { product, quantity },
+                ]
             }
         },
 
@@ -37,7 +46,7 @@ export const cartSlice = createSlice({
                 state.cart = state.cart.filter((item) => item.product.id !== product.id);
             }
         },
-
+        
         //funcion para limpiar el carrito
         clearCart: (state) => {
             state.cart = [];
@@ -49,7 +58,7 @@ export const cartSlice = createSlice({
         setProducts: (state, action) => {
             state.products = action.payload.products;
         },
-        
+
         //funcion para setear la cantidad de items en el carrito
         setItemsInCart: (state, action) => {
             state.itemsInCart = action.payload.items;

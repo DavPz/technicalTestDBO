@@ -7,7 +7,7 @@ export const FloatCartComponent = () => {
     const { itemsInCart } = useCart();
     return (
         <>
-            <div className="flex items-center  right-0 mr-10 mt-2 fixed w-12 h-12 bg-light-blue-800 rounded-lg p-1">
+            <div className="flex items-center  right-0 mr-10 mt-2 fixed w-12 h-12 bg-light-blue-800 rounded-lg p-1 z-50">
                 <NavLink to="/cart" className="flex items-center justify-center w-full h-full">
                     <ShoppingCartIcon color="white" className="h-8 w-8" />
                     <Typography color="white"> {itemsInCart} </Typography>

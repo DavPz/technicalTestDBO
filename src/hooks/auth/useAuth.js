@@ -10,7 +10,7 @@ export const useAuth = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const {user, isAuth} =useSelector(state => state.auth);
-    const {handlerClearCart} = useCart();
+    const {handlerClearCartOnLogOut} = useCart();
 
     // Función para manejar el login
     const handlerLogin = ({email, password}) => {
@@ -43,7 +43,7 @@ export const useAuth = () => {
         // Despachar la acción onLogout al store
         dispatch(onLogout());
 
-        handlerClearCart();
+        handlerClearCartOnLogOut();
 
         // Remover el usuario del sessionStorage
         sessionStorage.removeItem('login');
